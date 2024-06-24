@@ -30,8 +30,17 @@ button[type="submit"] {
   margin: 10px auto;
   padding: 10px 60px;
   border: 1px solid #222;
+
+  &:empty {
+    display: none;
+  }
 }
 
-#greeting:empty {
-  display: none;
+main {
+  width: 50%;
+  margin: auto;
+
+  section {
+    text-align: center;
+  }
 }
