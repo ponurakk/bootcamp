@@ -1,23 +1,17 @@
 <script setup>
 import { ref } from 'vue';
-import { bootcamp_backend } from 'declarations/bootcamp_backend/index';
 let greeting = ref('');
 
 async function handleSubmit(e) {
   e.preventDefault();
   const target = e.target;
   const name = target.querySelector('#name').value;
-  await bootcamp_backend.greet(name).then((response) => {
-    greeting.value = response;
-  });
+  greeting.value = `Hello ${name}`;
 }
 </script>
 
 <template>
   <main>
-    <img src="/logo2.svg" alt="DFINITY logo" />
-    <br />
-    <br />
     <form action="#" @submit="handleSubmit">
       <label for="name">Enter your name: &nbsp;</label>
       <input id="name" alt="Name" type="text" />
@@ -26,3 +20,10 @@ async function handleSubmit(e) {
     <section id="greeting">{{ greeting }}</section>
   </main>
 </template>
+
+<style>
+main {
+  width: 50%;
+  margin: auto;
+}
+</style>
